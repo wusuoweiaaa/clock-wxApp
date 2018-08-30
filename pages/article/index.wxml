@@ -1,0 +1,5 @@
+<!--daka/pages/article/index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view style='padding:1rem;'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+</view>

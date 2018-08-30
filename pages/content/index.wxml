@@ -1,0 +1,57 @@
+<view class='container index-container'>
+  <view class='news-block'>
+    <view class="news-item" wx:for="{{list}}" wx:key="">
+      <view class='left'>
+        <image src='{{item.avatar}}'></image>
+      </view>
+      <view class='right'>
+        <text>{{item.nickname}}</text>
+        <text>{{item.createtime}}</text>
+        <text>{{item.text}}</text>
+        <view style="margin-top:.5rem;">
+          <image wx:for="{{item.images}}" wx:for-item="images" wx:key="" src="{{images}}" bindtap='viewImage' data-src='{{images}}' data-images='{{item.images}}'></image>
+        </view>
+        <view class='zan'>  
+          
+          <image src='../../image/azan.png' id="{{item.id}}" wx:if="{{item.iszan == 1}}" data-zan="{{item.iszan}}" bindtap='dianzan'></image>
+          <image src="../../image/zan.png" id="{{item.id}}" wx:else data-zan="{{item.iszan}}" bindtap='dianzan'></image>
+          <text style='margin-bottom:0;'>{{item.zan_count}}</text>
+        </view>
+      </view>
+      <view class="info" bindtap='toinfo' id="{{item.id}}" data-self="{{item.isoneself}}">
+        <image src="../../image/info.png"></image>
+      </view>
+      
+    </view>
+    <view class="daodi" wx:if="{{daodi}}">已经到底了~不能再拉了</view>
+    
+  </view>
+</view>
+
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+    <block wx:for-items="{{actionSheetItems}}">
+        <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
+<action-sheet hidden="{{actionSheetHidden1}}" bindchange="actionSheetbindchange1">
+    <block wx:for-items="{{actionSheetItems1}}">
+        <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
+
+<!-- <view class='infocover'>
+  <view class='list'>
+    <view>
+    删除
+    </view>
+    <view>
+    投诉
+    </view>
+    <view>
+    取消
+  </view>
+  </view>
+  
+</view> -->

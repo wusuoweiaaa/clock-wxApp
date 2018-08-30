@@ -1,0 +1,54 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<import src="../../template/calendar/index.wxml"/>
+<import src="../../template/datepicker/index.wxml"/>
+
+<view class="container index-container"> 
+  <view class='dakalist'>
+    <view class='title'>今日打卡</view>
+    <view class='daka-item' wx:for="{{data.my_signin}}" wx:key="" id="{{item.id}}" data-type="{{item.type}}" bindtap='toDaka' data-sign="{{item.is_sign}}">
+      <image src='{{item.images}}'></image>
+      <view class="daka-info">
+        <text class='info-title'>{{item.title}}</text>
+        <text class='info-detail'>{{item.description}}</text>
+        <text class='info-time'>
+          <text class='iconfont icon-last-time'></text>
+          <text>{{item.signin_time}}</text>
+          <text class='iconfont icon-didian1'>{{item.signin_day}}/30</text>
+        </text>
+      </view>
+      <image class="dianji" src='../../image/dianji.png' wx:if="{{item.is_sign == 0}}"></image>
+      <text class='iconfont icon-wancheng' wx:else></text>
+    </view>
+  </view>
+
+  <view class='tuijian'>
+    <view class='title'>官方推荐</view>
+    <view class='tuijian-item' bindtap='toDaka' wx:for="{{data.recommend_signin}}" id="{{item.id}}" wx:key="" data-type="{{item.type}}">
+      <image class="tuijian-cover" mode="widthFix" src='{{item.images}}'></image>
+      <view class="tuijian-info">
+        <view class='avatars'>
+         
+            <image wx:for="{{item.enroll_user}}" wx:for-item="image" wx:key="" src='{{image.avatar}}' wx:if="{{index < 5}}"></image>
+         
+          
+        </view>
+        <text>{{item.enroll}}人参与</text>
+      </view>
+    </view>
+    
+  </view>
+  
+ 
+  <view class='zp'>
+    ©掌泡科技提供技术支持
+  </view>
+  
+</view>
+
+<!-- <view class='login' wx:else>
+  <view class='content-block'>
+      <image class="close" src="../../image/close.png" bindtap='closelogin'></image>
+      <button  open-type="getUserInfo" bindgetuserinfo="updateUserInfo">点击授权登录</button>
+    </view>
+</view> -->
+  

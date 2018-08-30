@@ -1,0 +1,2 @@
+/* daka/pages/article/index.wxss */
+@import "../../wxParse/wxParse.wxss";

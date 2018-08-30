@@ -1,0 +1,141 @@
+/**index.wxss**/
+@import "../../wxParse/wxParse.wxss";
+@import '../../template/datepicker/index.wxss';
+@import '../../template/calendar/index.wxss';
+
+page {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.index-container {
+  /* margin-bottom: 5rem; */
+  position: relative;  
+}
+
+.dakalist {
+  margin: .8rem;
+  width:calc(100% - 1.6rem);
+}
+
+.dakalist .title {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.daka-item {
+  position: relative;
+ display:flex;
+  margin:.8rem 0;
+  padding:.8rem .7rem;
+  background-color:#fff;
+  align-items: center;
+}
+
+.daka-item image {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+}
+
+.tuijian {
+  margin: .8rem;
+  width:calc(100% - 1.6rem);
+}
+
+.tuijian .title {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  color:#333;
+}
+
+.daka-info {
+  display: flex;
+  flex-direction: column;
+  width:9rem;
+}
+
+.daka-info .info-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+
+.daka-info .info-detail{
+  font-size: 13px;
+  /* color: var(--second-grey); */
+  color: #666;
+  overflow: hidden;
+    text-overflow: ellipsis; 
+    -o-text-overflow: ellipsis;
+    white-space:nowrap;
+
+}
+
+.daka-info .info-time {
+  color: #666;
+  font-size: 12px;
+  margin-top: .3rem;
+}
+
+.icon-didian1, .icon-last-time {
+  font-size: 13px;
+}
+
+.icon-didian1 {
+  margin-left: 1.5rem;
+}
+
+.icon-wancheng, .dianji {
+  position: absolute;
+  right: 1rem;
+ 
+  color: #FFDA00;
+}
+
+.icon-wancheng {
+   font-size: 40px;
+}
+
+.daka-item .dianji {
+  width: 40px;
+  height: 40px;
+  margin-right: 0;
+}
+
+.tuijian-item {
+  margin-top: .8rem;
+  background-color: #fff;
+}
+
+.tuijian-item .tuijian-cover {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display:block;
+}
+
+.tuijian-item .tuijian-info {
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 14px;
+  padding: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+}
+
+.tuijian-item .avatars image {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  margin-right: .3rem;
+}
+
+

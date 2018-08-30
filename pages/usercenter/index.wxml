@@ -1,0 +1,81 @@
+<view class="index-container">
+  <view class='top'  style='background-size: 100% 100%;background-repeat: no-repeat;'>
+    <view class='top-index'>
+      <view class="top-bottom">
+        <image src='{{user.avatar}}'></image><text bindtap='touserinfo'>{{user.nickname}}</text>
+      </view>
+      <view class="top-info">参与打卡{{sign_count}}天 | 发表{{diary_count}}篇日记</view>
+      
+    </view>
+  </view>
+  <view class='canyu'>
+    <view class='block-title' style='padding-left:0;'>参与的打卡</view>
+    <view class='canyu-block'>
+      <view class='canyu-list'>
+        <view class='canyu-item' wx:for="{{signin}}" wx:key=""  id="{{item.id}}" data-type="{{item.type}}" bindtap='toDaka'>
+          <image mode='widthFix' src='{{item.images}}'></image>
+          <view>{{item.title}}</view>
+          <view class='canyu-num'>{{item.totaluser}}人参与</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='block-title'>打卡日记</view>
+      <view wx:for="{{diary}}" wx:key="">
+        <template is="bar" data="{{...item,images: item.images}}"></template>
+      </view>
+    </view>
+</view>
+
+ <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+        <block wx:for-items="{{actionSheetItems}}" wx:key="">
+            <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+        </block>
+        <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+    </action-sheet>
+    <action-sheet hidden="{{actionSheetHidden1}}" bindchange="actionSheetbindchange1">
+        <block wx:for-items="{{actionSheetItems1}}"  wx:key="">
+            <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+        </block>
+        <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+    </action-sheet>
+
+<template name="bar">
+      <view class='list-item'>
+        <view class='list-item-left'>
+          <image class="avatar" src='{{avatar}}' id="{{openid}}"></image> 
+        </view>
+        <view class='list-item-right'>
+         <view class="item-title">
+          <text>{{nickname}}</text>
+          
+          </view>
+         <view class='info'>
+            <view class="item-time">{{createtime}}</view>
+            <view class="item-title">{{text}}</view>
+            <view class="images" wx:if="{{images && images.length>0}}">
+              <image wx:for="{{images}}" wx:for-item="image" wx:key="" src="{{image}}" bindtap='viewImage' data-url='{{image}}' data-images='{{images}}' bindtap="preview"></image>
+            </view>
+            <view class='icons'>
+              <text class='icon-item' bindtap='dian' id="{{id}}">
+                <text class='iconfont icon-zan icon'  wx:if="{{iszan == 0}}" ></text>
+                <text class='iconfont icon-28dianzanfill' wx:else></text>
+                 <text wx:if="{{iszan == 0}}"> 赞</text>
+                 <text wx:else> 取消赞</text>
+              </text>
+              <!-- <text class='icon-item' bindtap='dianzan'  data-did="{{item.id}}" wx:else><text class='iconfont icon-28dianzanfill'></text> 取消赞</text> -->
+              <text class='icon-item' bindtap="tocomment" id="{{id}}"><text class='iconfont icon-pinglun icon'></text> 评论</text>
+              <text class='icon-item' wx:if="{{oneself == 1}}" bindtap='share'  id="{{id}}"><text class='iconfont icon-zhuanfa icon'></text> 分享</text>
+            </view>
+            <view class='info-list' wx:if="{{zan_count > 0 || comment_list && comment_list.length > 0}}">
+              <view wx:if="{{zan_count > 0}}" class="zancount"><text class='iconfont icon-zan icon'></text>{{zan_count}}人觉得很赞<text></text></view>
+              <view wx:for="{{comment_list}}" wx:for-item="pinglun" wx:key="" wx:if="{{comment_list && comment_list.length > 0}}"><text class='name'>{{pinglun.nickname}}</text><text>: {{pinglun.text}}</text></view>
+            </view>
+         </view>
+        </view>
+        <view class="info1" bindtap='toinfo' id="{{item.id}}" data-self="{{item.isoneself}}">
+            <image src="../../image/info.png"></image>
+        </view>
+      </view>
+    </template>

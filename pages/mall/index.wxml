@@ -1,0 +1,104 @@
+<view class="index-container">
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"  style='height:{{height}}' previous-margin= '30px' next-margin="30px">
+      <block wx:for="{{images}}" wx:key="">
+        <swiper-item>
+          <image src="{{item}}" bindload='imgload' class="slide-image" mode='widthFix'/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='jifen'>
+    <view class='jifen-num'>
+      <view class="left title-plus"><image src='../../image/jifen.png'></image>888积分</view>
+      <text class='right'>兑换记录<text class="iconfont icon-you"></text></text>
+    </view>
+    <view class='jifen-item'>
+      <view class='items'>
+        <image src='../../image/jifen1.png'></image>
+        <text>大转盘</text>
+      </view>
+      <view class='items'>
+        <image src='../../image/jifen2.png'></image>
+        <text>砸金蛋</text>
+      </view>
+      <view class='items'>
+        <image src='../../image/jifen3.png'></image>
+        <text>摇奖机</text>
+      </view>
+    </view>
+  </view>
+  <view class='chanpin'>
+    <view class='title'>
+      <view class="left title-plus"><image src='../../image/cp.png'></image>3C产品</view>
+      <!-- <text class='right'>更多</text> -->
+    </view>
+    <view class='chanpin-items'>
+      <view class='cp-item' wx:for="{{productList[0].product_list}}" wx:key="" bindtap='toGoods'>
+        <image src='{{item.cover}}' mode='widthFix'></image>
+        <text class='cp-title'>{{item.title}}</text>
+         <text class='cp-jifen'><text>{{item.credit}}</text>积分</text>
+      </view>
+     <!-- <view class='cp-item'>
+        <image src='../../image/chanpin2.png' mode='widthFix'></image>
+        <text class='cp-title'>iphone7 180g</text>
+         <text class='cp-jifen'><text>888</text>积分</text>
+      </view>
+      <view class='cp-item'>
+        <image src='../../image/chanpin3.png' mode='widthFix'></image>
+        <text class='cp-title'>iphone7 180ggggggggggggggggggggg</text>
+        <text class='cp-jifen'><text>888</text>积分</text>
+      </view> -->
+    </view>
+  </view>
+  <view class='chanpin'>
+    <view class='title'>
+      <view class="left title-plus"><image src='../../image/hf.png'></image>话费流量</view>
+      <!-- <text class='right'>更多</text> -->
+    </view>
+    <view class='chanpin-items'>
+      <view class='cp-item'>
+        <image src='../../image/huafei1.png' mode='widthFix'></image>
+        <text class='cp-title'>iphone7 180g</text>
+         <text class='cp-jifen'><text>888</text>积分</text>
+      </view>
+     <view class='cp-item'>
+        <image src='../../image/huafei2.png' mode='widthFix'></image>
+        <text class='cp-title'>iphone7 180g</text>
+         <text class='cp-jifen'><text>888</text>积分</text>
+      </view>
+      <view class='cp-item'>
+        <image src='../../image/huafei3.png' mode='widthFix'></image>
+        <text class='cp-title'>iphone7 180ggggggggggggggggggggg</text>
+        <text class='cp-jifen'><text>888</text>积分</text>
+      </view>
+    </view>
+  </view>
+  <view class='chanpin'>
+    <view class='title'>
+      <view class="left title-plus"><image src='../../image/jd.png'></image>家电产品</view>
+      <!-- <text class='right'>更多</text> -->
+    </view>
+    <view class='chanpin-items'>
+      <view class='cp-item'>
+        <image src='../../image/jiadian.png' mode='widthFix'></image>
+        <text class='cp-title'>iphone7 180g</text>
+         <text class='cp-jifen'><text>888</text>积分</text>
+      </view>
+     <view class='cp-item'>
+        <image src='../../image/jiadian.png' mode='widthFix'></image>
+        <text class='cp-title'>iphone7 180g</text>
+         <text class='cp-jifen'><text>888</text>积分</text>
+      </view>
+      <view class='cp-item'>
+        <image src='../../image/jiadian.png' mode='widthFix'></image>
+        <text class='cp-title'>iphone7 180ggggggggggggggggggggg</text>
+        <text class='cp-jifen'><text>888</text>积分</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+

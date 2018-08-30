@@ -1,0 +1,94 @@
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  font-size: 15px;
+}
+
+.bottom .left {
+  flex: 1;
+  text-align: center;
+   padding: 1rem 0;
+   background: #fff;
+}
+
+.bottom .right {
+  flex: 3;
+  text-align: center;
+  background: #ffda00;
+  color: #fff;
+   padding: 1rem 0;
+}
+
+.input {
+  width: calc(100vw - 2rem);
+  height: 5rem;
+  padding: .5rem 1rem;
+  font-size: 16px;
+}
+
+.input textarea {
+  width: 100%;
+  height: 5rem;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 1rem 1rem 1rem;
+  align-items:center;
+
+}
+
+.images image {
+  width: 5rem;
+}
+
+.shangchuan {
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+
+  width: 5em;
+  height: 5em;
+  margin-top: 1em;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-around;
+  align-content: center;
+  line-height:5rem;
+
+
+  background-color: white;
+  border-radius: 1px solid #666;
+  flex: 0 0 clac(33% - 1rem);
+  
+}
+
+.shangchuan image {
+  width: 100%;
+  height: 3rem;
+  overflow-y: hidden;
+}
+
+.imageblock {
+  width:5em;
+height:5em;
+overflow:hidden;
+
+}
+
+.upload-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #d92804;
+  color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+}

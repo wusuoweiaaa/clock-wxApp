@@ -1,0 +1,28 @@
+<view class="news-container">
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"  style='height:{{height}}' previous-margin= '30px' next-margin="30px">
+      <block wx:for="{{list.images}}" wx:key="">
+        <swiper-item>
+          <image src="{{item.images}}" bindload='imgload' class="slide-image" mode='widthFix'/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='tuijian'>
+    <view class='tuijian-item'  bindtap='todaka' wx:for="{{list.sign_in}}" wx:key="" id="{{item.id}}">
+      <image class="tuijian-cover" mode="widthFix" src='{{item.images}}'></image>
+      <view class="tuijian-info">
+        <view class='avatars'>
+          <image  wx:for="{{item.enroll_user}}" wx:for-item="image" wx:key="" src='{{image.avatar}}' wx:if="{{index < 5}}"></image>
+        </view>
+        <text>{{item.enroll}}人参与</text>
+      </view>
+    </view>
+    
+  </view>
+
+  <view class='zp'>
+    ©掌泡科技提供技术支持
+  </view>
+</view>

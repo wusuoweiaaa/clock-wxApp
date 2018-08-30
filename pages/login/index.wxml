@@ -1,0 +1,17 @@
+<!--daka/pages/login/index.wxml-->
+<view class='login-container'>
+  <view class="top">
+    <image src="../../image/logo.png"></image>
+    <view>快打卡</view>
+    <view class='color-grey' style='font-size:15px;'>一个神奇的打卡工具。</view>
+  </view>
+  <view class='bottom color-grey'> 
+    <view>该程序将获得以下权限</view>
+    <view>• 获得您的公开信息（头像、昵称等）</view>
+    <view>(拒绝授权你可能无法使用小程序哦~)</view>
+  </view>
+  <view class='buttons'>
+    <!-- <view class="back" bindtap='toback'>返回</view> -->
+    <button class="shouquan"  open-type="getUserInfo" bindgetuserinfo="updateUserInfo">立即授权</button>
+  </view>
+</view>

@@ -1,0 +1,238 @@
+@import "../../wxParse/wxParse.wxss";
+@import '../../template/datepicker/index.wxss';
+@import '../../template/calendar/index.wxss';
+.daka-container {
+  padding: .8rem;
+}
+
+.top {
+  position: relative;
+  padding: 1rem;
+  border-radius: 4px;
+  
+  color: #fff;height:5rem;
+}
+
+.top .top-index {
+  position: absolute;
+  left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.top .top-title {
+  font-size: 18px;
+}
+
+.top .top-middle {
+  font-size: 13px;
+  margin: .5rem 0 1rem 0;
+}
+
+.top-middle text:nth-child(1){
+  margin-right: 1.5rem;
+}
+
+.top .top-bottom {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.top .top-bottom image{
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  margin-right: .2rem;
+}
+
+.top .top-bottom text:nth-child(3) {
+  margin-left: 1.5rem;
+  font-size: 10px;
+  background: rgba(0, 0, 0, .3);
+  padding: 0 5px;
+  border-radius: 2px;
+}
+
+.top:after{
+  content: "";
+  width:100%;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
+  background: inherit;
+  filter: blur(5px);
+  z-index: 2;
+}
+
+.user-block {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  margin-top:1rem;
+  padding:.8rem;
+  justify-content: space-between;
+  position:relative;
+}
+
+.user-block .user-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  
+}
+
+.user-block .user-info text:nth-child(2) {
+  color: #999;
+  font-size: 10px;
+}
+
+.user-block view:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+
+.user-block .avatar{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  margin-right: .5rem;
+}
+
+.user-block .user-right {
+  font-size: 10px;
+  display: flex;
+  position:absolute;
+  right:.5rem;
+  top:.8rem;
+}
+
+.user-block .user-right  .right-item {
+  display:flex;
+  align-items:cneter;
+  background: linear-gradient(to right, #ffec00, #ffaa00);
+  padding: .2rem .3rem;
+  border-radius:3px;
+  margin-right:.3rem;
+
+}
+
+.user-block .user-right  .right-item image{
+  height: .8rem;
+  width: .8rem;
+}
+
+.calender {
+  background: #fff;
+  border-top:8px solid #ffec00;
+  margin-top:.8rem;
+  /* box-shadow:0 10px 20px #ccc; */
+  border-radius: 2px;
+}
+
+.calender .title {
+  padding: .5rem 1rem;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title text {
+  color: #FFDA00;
+}
+
+.title image{
+  width:16px;
+  height:16px;
+  margin-right: .2rem;
+}
+
+.calender .title .left{
+  display: flex;
+  align-items: center;
+}
+
+.title .left text{
+    color: #000;
+}
+
+.dakaDetail {
+  background: #fff;
+  margin-top:.8rem;
+  border-top:8px solid #ffec00;
+  border-radius: 2px;
+}
+
+.dakaDetail .title {
+  padding: .5rem 1rem;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.dakaDetail .title .left{
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+
+.dakaDetail .detail {
+  display: flex;
+  flex-direction: column;
+  padding:0 .8rem .8rem .8rem;
+  font-size: 13px;
+  color: #999;
+}
+
+.dakaDetail .detail .detail-item{
+  display: flex;
+  justify-content: space-between;
+  margin: .2rem 0;
+}
+
+.tianshu .cir{
+  display: inline-block;
+  margin-top: 20rpx;
+ 
+}
+ 
+.tianshu .top2{
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+ 
+.tianshu .cc{
+  margin-top: -120px;
+}
+
+.top2 .canvas {
+  height: 182px;
+  width: 182px;
+}
+
+
+.paihangbang .detail {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.paihangbang .detail .detail-item {
+  flex-direction: column;
+  text-align:center;
+}
+
+.paihangbang .detail .detail-item text:first-child {
+  color: #000;
+}

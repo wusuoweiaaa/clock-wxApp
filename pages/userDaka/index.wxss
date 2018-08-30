@@ -1,0 +1,256 @@
+@import "../../wxParse/wxParse.wxss";
+@import '../../template/datepicker/index.wxss';
+@import '../../template/calendar/index.wxss';
+.daka-container {
+  padding: .8rem;
+}
+
+.top {
+  display: flex;
+  padding: .8rem;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top .top-cover{
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 100%;
+  margin: .5rem .5rem .5rem 0;
+}
+
+.top .top-left {
+  display: flex;
+  align-items: center;
+}
+
+.top .top-left .top-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+  flex:1;
+}
+
+.top .top-left .top-info .title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.top .icon-wancheng {
+  font-size: 1.8rem;
+  margin-left:.3rem;
+}
+
+.tianshu {
+  position: relative;
+  padding: .8rem;  
+  margin-top: .8rem;
+  padding-bottom: 2rem;
+  background-color: #fff;
+}
+
+.tianshu .tianshu-circle-back {
+  position: relative;
+  margin: 0 auto; 
+  height: 8rem;
+  width: 8rem;
+  border-radius: 100%;
+  background-color: #F9F9F9;
+}
+
+.tianshu .tianshu-circle-back::before {
+  content: '';
+  display: block;
+  margin-left: 50%;
+  height: 100%;
+  border-radius: 0 100% 100% 0/50%;
+  background-color: inherit;
+  transform-origin: left;
+  /* animation: spin 3s linear, bg 6s step-end; */
+  /* transform: rotate(.1turn); */
+  background: #FFDA00;
+}
+
+@keyframes spin{
+    to{transform: rotate(.5turn);}
+}
+@keyframes bg{
+    50%{background: #655;}
+}
+
+ .tianshu-circle-cover {
+  position: absolute;
+  top: 6px;
+  left: calc(1 - 85px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 170px;
+  width: 170px;
+  font-size: 12px;
+  border-radius: 100%;
+  /* background-color: #fff; */
+}
+
+.tianshu-circle-cover .count{
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.tianshu .tianshu-left {
+  position: absolute;
+  bottom: .8rem;
+  left: .8rem;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  font-size: 12px;
+}
+
+.tianshu .tianshu-right {
+  position: absolute;
+  right: .8rem;
+  bottom:.8rem;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  font-size: 12px;
+}
+
+.tianshu .tianshu-right .text, .tianshu .tianshu-left .text {
+  color: #999;
+}
+
+.calender {
+  background: #fff;
+  border-top:8px solid #ffec00;
+  margin-top:.8rem;
+  /* box-shadow:0 10px 20px #ccc; */
+  border-radius: 2px;
+}
+
+.calender .title {
+  padding: .5rem 1rem;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title text {
+  color: #FFDA00;
+}
+
+.title image{
+  width:16px;
+  height:16px;
+  margin-right: .2rem;
+}
+
+.calender .title .left{
+  display: flex;
+  align-items: center;
+}
+
+.title .left text{
+    color: #000;
+}
+
+.dakaDetail {
+  background: #fff;
+  margin-top:.8rem;
+  border-top:8px solid #ffec00;
+  border-radius: 2px;
+}
+
+.dakaDetail .title {
+  padding: .5rem 1rem;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.dakaDetail .title .left{
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+
+.dakaDetail .detail {
+  display: flex;
+  flex-direction: column;
+  padding:0 1rem 1rem 1rem;
+  font-size: 13px;
+  color: #999;
+}
+
+.dakaDetail .detail2 {
+  display:flex;
+  padding:0 1rem 1rem 1rem;
+  font-size:13px;
+  color:#999;
+  justify-content:space-between;
+
+}
+
+.dakaDetail .detail2 .detail-item2 {
+  display:flex;
+  justify-content:space-between;
+  margin:.2rem 0;
+  flex-direction:column;
+  text-align:center;
+}
+
+.dakaDetail .detail .detail-item{
+  display: flex;
+  justify-content: space-between;
+  margin: .2rem 0;
+}
+
+.dakaDetail .wancheng3 {
+  width: calc(100% - 2rem);
+  font-size: 14px;
+  color: #fff;
+  background: linear-gradient(to right, #ffec00, #ffaa00);
+  margin:0 auto;
+  border-radius:3px;
+  text-align:center;
+  padding:1rem 0;
+}
+
+.paihangbang {
+  padding-bottom: 1rem;
+}
+
+.dakaDetail .wancheng3 .mubiao {
+  font-size: 20px;
+}
+
+.tianshu .cir{
+  display: inline-block;
+  margin-top: 20rpx;
+ 
+}
+ 
+.tianshu .top2{
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+ 
+.tianshu .cc{
+  margin-top: -120px;
+}
+
+.top2 .canvas {
+  height: 182px;
+  width: 182px;
+}
+
+

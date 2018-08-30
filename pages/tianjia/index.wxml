@@ -1,0 +1,73 @@
+<view class="tianjia-container">
+  <view class='contain-block'>
+    <view class='block-title'>目标打卡</view>
+    <view class='block-details daka-items'>
+      <view class='daka-item' bindtap='toAdd'>
+        <view class='left'>
+          <text class='daka-item-title'>自定义</text>
+          <text class='num'>2658人参加</text>
+        </view>
+        <image src='../../image/pen.png'></image>
+      </view>
+      <view class='daka-item'  bindtap='toAdd' data-title='早起' data-status="disabled">
+        <view class='left'>
+          <text class='daka-item-title'>早起</text>
+          <text class='num'>2658人参加</text>
+        </view>
+        <image src='../../image/sun.png'></image>
+      </view>
+      <view class='daka-item'  bindtap='toAdd' data-title='跑步' data-status="disabled">
+        <view class='left'>
+          <text class='daka-item-title'>跑步</text>
+          <text class='num'>2658人参加</text>
+        </view>
+        <image  src='../../image/run.png'></image>
+      </view>
+      <view class='daka-item'  bindtap='toAdd' data-title='背单词' data-status="disabled">
+        <view class='left'>
+          <text class='daka-item-title'>背单词</text>
+          <text class='num'>2658人参加</text>
+        </view>
+        <image src='../../image/en.png'></image>
+      </view>
+      <view class='daka-item' bindtap='toAdd' data-title='运动' data-status="disabled">
+        <view class='left'>
+          <text class='daka-item-title'>运动</text>
+          <text class='num'>2658人参加</text>
+        </view>
+        <image  src='../../image/ball.png'></image>
+      </view>
+      <view class='daka-item' bindtap='toAdd' data-title='学习' data-status="disabled">
+        <view class='left'>
+          <text class='daka-item-title'>学习</text>
+          <text class='num'>2658人参加</text>
+        </view>
+        <image src='../../image/book.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='contain-block quanzi-block'>
+    <view class='block-title'>场景打卡</view>
+    <view class='block-details' bindtap='toAdd2'>
+      <image class="quanzi-cover" mode="widthFix" src='../../image/cover2.png'></image>
+      <view class="quanzi-info">
+        <text>添加打卡</text>
+        <!-- <text>88个圈子</text> -->
+      </view>
+    </view>
+  </view>
+  <view class='contain-block quanzi-block'>
+    <view class='block-title'>挑战打卡</view>
+    <view class='block-details' bindtap='toAdd3'>
+      <image class="quanzi-cover" mode="widthFix" src='../../image/cover2.png'></image>
+      <view class="quanzi-info">
+        <text>添加打卡</text>
+        <!-- <text>88人参与</text> -->
+      </view>
+    </view>
+  </view>
+  <view class='zp'>
+    ©掌泡科技提供技术支持
+  </view>
+</view>
+

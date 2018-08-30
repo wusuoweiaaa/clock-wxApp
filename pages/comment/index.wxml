@@ -1,0 +1,11 @@
+<view class="edit-container">
+  
+  <view class='input'>
+    <textarea bindinput='input' placeholder='写下你的评论...' value='{{text}}' maxlength='15'>
+      
+    </textarea> 
+  </view>
+  <view class='bottom'>
+    <view class='left' bindtap='toback'>取消</view><view class="right" bindtap='fabiao'>发表</view>
+  </view>
+</view>

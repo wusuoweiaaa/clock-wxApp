@@ -1,0 +1,95 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<import src="../../template/calendar/index.wxml"/>
+<import src="../../template/datepicker/index.wxml"/>
+<view class="daka-container">
+  <view class='top'>
+    <view class='top-left'>
+      <image class="top-cover" src='{{user.avatar}}'></image>
+      <view class='top-info'>
+        <text class='title'>{{top.title}}</text>
+        <text>{{top.description}}</text>
+      </view>
+    </view>
+    <image src="../../image/wancheng.png" style='height:1.2rem;width:1.2rem;' bindtap="toedit"></image>
+  </view>
+  <view class='tianshu' wx:if="{{signin.totalcheckin < top.config.target_day}}">
+    <view class="top2">
+      <canvas class="cir" class='canvas' canvas-id="canvasArc">
+      </canvas>
+  
+      <view class='tianshu-circle-cover'>
+        <text>已打卡天数</text>
+        <text class="count">{{signin.totalcheckin}}</text>
+        <text>目标天数</text>
+        <text>{{top.config.target_day}}</text>
+      </view>
+  
+    </view>
+    <view class='tianshu-left'>
+      <view>{{signin.orderdaycheckin}}</view>
+      <view class='text'>已连续</view>
+    </view>
+    <view class='tianshu-right'>
+      <view>{{signin.highestcheckin}}</view>
+      <view class='text'>最高连续</view>
+    </view>
+  </view>
+  <view class='dakaDetail paihangbang' wx:else>
+    <view class='title'>
+      <view class='left' bindtap="totimeline">
+        <image src='../../image/calender.png'></image>
+        <text>打卡统计</text>
+      </view>
+    </view>
+    <view class='detail2'>
+      <view class='detail-item2'><text>{{signin.totalcheckin}}</text><text>已打卡</text></view>
+      <view class='detail-item2'><text>{{signin.orderdaycheckin}}</text><text>连续打卡</text></view>
+      <view class='detail-item2'><text>{{signin.highestcheckin}}</text><text>最高连续</text></view>
+      <view class='detail-item2'><text>0</text><text>距离目标</text></view>
+    </view>
+    <view class='wancheng3'>
+      <view class="mubiao">完成目标</view>
+      <view>获得《达人》勋章一枚</view>
+    </view>
+  </view>
+  <view class='calender'>
+    <view class="title">
+      <view class='left' bindtap="totimeline">
+        <image src='../../image/calender.png'></image>
+        <text>我的打卡日历</text>
+      </view>
+      <!-- <text bindtap='tocontent' wx:if="{{shenhe==0}}">打卡状态</text> -->
+      <text bindtap='tocontent' >打卡心情</text>
+    </view>
+    
+    <view class="calendar-wrap">
+      <template is="calendar" data="{{...calendar}}" />
+    </view>
+  </view>
+  <view class='dakaDetail'>
+    <view class="title">
+      <view class='left' bindtap="totimeline">
+        <image src='../../image/calender.png'></image>
+        <text>打卡详情</text>
+      </view>
+      <!-- <text bindtap='tocontent' wx:if="{{shenhe==0}}">打卡状态</text> -->
+    </view>
+    <view class='detail'>
+      <view class="detail-item"><text>开始时间</text><text>{{top.config.sign_time.start_date}}</text></view>
+      <view class="detail-item"><text>结束日期</text><text>{{top.config.sign_time.end_date}}</text></view>
+      <view class="detail-item"><text>打卡时间</text><text>{{top.config.sign_time.start_time}}- {{top.config.sign_time.end_time}}</text></view>
+      <!-- <view class="detail-item"><text>提醒时间</text><text>{{top.config.sign_time.tipTime || '10:00'}}</text></view> -->
+      <!-- <view class="detail-item"><text>重置</text><text>每日</text></view> -->
+    </view>
+  </view>
+</view>
+<view class='tip-cover' wx:if="{{daka}}">
+  <view class='tip-block'>
+    <view class='close' bindtap='close'>×</view>
+    <image src='../../image/wancheng2.png' mode="widthFix"></image>
+    <view class='plus'>恭喜你，打卡成功!</view>
+    <view class='yellow'>+{{dakainfo.integral}}积分</view>
+    <view class='grey'>坚持打卡{{dakainfo.orderdaycheckin}}天</view>
+    <view class='button'><text bindtap='tofabiao'>发表日记</text><text>分享一下</text></view>
+  </view>
+</view>

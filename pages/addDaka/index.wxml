@@ -1,0 +1,60 @@
+<view class="index-container">
+  <view class='content'>
+    <!-- <view>选择图片</view> -->
+    <image class='top-cover' src='{{image}}' mode='widthFix' bindtap="choose"></image>
+    <input placeholder='请输入挑战名称' placeholder-style="font-size:13px;" value='{{mtitle || title}}' bindinput="inputitle" disabled='{{disabled}}' style='{{disabled?"color:#666;":""}}'></input>
+    <input placeholder='请输入挑战公告' placeholder-style="font-size:13px;" value="{{description}}" bindinput="inputdes"></input>
+    <textarea class="details" placeholder='请输入挑战详情' placeholder-style="text-align:center !important;font-size:13px;" value="{{details}}" bindinput="inputdetails"></textarea>
+    <view class='input-item'>
+      <text>开始日期</text>
+      <picker mode="date" value="{{startDay}}"  bindchange="startDay">
+        <view class="picker">
+          <text class="chosedate">{{startDay}}<text class='iconfont icon-you'></text></text>
+        </view>
+      </picker>
+    </view>
+    <view class='input-item'>
+      <text>结束日期</text>
+      <picker mode="date" value="{{endDay}}"  bindchange="endDay">
+        <view class="picker">
+          <text class="chosedate">{{endDay}}<text class='iconfont icon-you'></text></text>
+        </view>
+      </picker>
+    </view>
+    <view class='input-item'>
+      <text>打卡时间</text>
+      <view class='shijianduan'>
+        <picker mode="time" value="{{startTime}}"  bindchange="startTime">
+          <view class="picker">
+            <text class="chosedate">{{startTime}} </text>
+          </view>
+        </picker>
+        <text> -- </text>
+        <picker mode="time" value="{{endTime}}"  bindchange="endTime">
+          <view class="picker">
+            <text class="chosedate"> {{endTime}}<text class='iconfont icon-you'></text></text>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='input-item'>
+      <text>目标天数</text>
+      <picker mode="time" value="{{targetDay}}"  bindchange="endTime">
+        <view class="picker">
+          <text class="chosedate">{{targetDay}}<text class='iconfont icon-you'></text></text>
+        </view>
+      </picker>
+    </view>
+    <!-- <view class='input-item'>
+      <text>提醒时间</text>
+      <picker mode="time" value="{{tipTime}}"  bindchange="tipTime">
+        <view class="picker">
+          <text class="chosedate">{{tipTime}}<text class='iconfont icon-you'></text></text>
+        </view>
+      </picker>
+    </view> -->
+  </view>
+  <view class='button' style='color: #ffda00;' bindtap='baocun'>保存目标</view>
+  <view class='button' bindtap='end'>结束目标</view>
+  <view class='button' bindtap='delete'>删除目标</view>
+</view>

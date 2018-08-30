@@ -1,0 +1,12 @@
+<view class="index-container">
+  <view class='changjingList'>
+    <view class='list-item' wx:for="{{list}}" wx:key="" bindtap='toArticle' id="{{item.id}}" data-cid="{{item.cid}}" data-status="{{item.lock_status}}">
+      <view class='info'>
+        <text>{{item.title}}</text>
+        <text class="jiesuo" wx:if="{{item.lock_status == 1}}">已解锁</text>
+        <text class="jiesuo" wx:else>尚未解锁</text>
+      </view>
+      <image src="{{item.thumb}}" mode='widthFix'></image>
+    </view>
+  </view>
+</view>

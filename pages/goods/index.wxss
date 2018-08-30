@@ -1,0 +1,79 @@
+/* daka/pages/goods/index.wxss */
+
+.index-container {
+  padding: .8rem;
+}
+
+.top {
+  background-color:#fff;
+}
+
+.top image {
+  width: 100%;
+}
+
+.top .top-info {
+  display: flex;
+  flex-direction: column;
+  margin:0 1rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.top .top-info .title {
+  font-size: 18px;
+}
+
+.yellow {
+  color: #ffda00;
+}
+
+.top .top-info .jifen {
+  display: flex;
+  color: #999;
+  font-size: 16px;
+}
+
+.detail {
+  margin-top: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom:4rem;
+}
+
+.detail .title {
+  font-size: 16px;
+}
+
+.detail .info {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  background-color: #fff;
+  height: 4rem;
+  line-height:4rem;
+  text-align:center;
+  border-top: 1px solid #f9f9f9;
+}
+
+.bottom text {
+  display:block;
+color:#fff;
+width:90%;
+/* padding:.2rem 0; */
+border-radius:20px;
+background:linear-gradient(to right, #ffec00, #ffaa00);
+margin:0 auto;
+height:2.5rem;
+
+margin-top:.75rem;
+line-height:2.5rem;
+
+}

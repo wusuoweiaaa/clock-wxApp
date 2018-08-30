@@ -1,0 +1,67 @@
+/* daka/pages/pocket/withdraw/index.wxss */
+.index-container {
+  padding:.8rem;
+}
+
+.userinfo {
+  background-color: #fff;
+  padding: .8rem;
+  text-align:center;
+  font-size: 16px;
+}
+
+
+.userinfo .info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.userinfo .top-left {
+  display:flex;
+  align-items:center;
+  font-size: 15px;
+}
+
+.userinfo .top-left image {
+  height:3rem;
+  width:3rem;
+  border-radius:100%;
+  margin-right:.5rem;
+}
+
+.withdraw-block {
+  background-color: #fff;
+  padding: .8rem;
+  margin-top: 1rem;
+}
+
+.withdraw-block .title {
+  font-size: 13px;
+  margin-top:1rem;
+}
+
+.withdraw-block .input {
+  display: flex;
+  border-bottom: 1px solid #f9f9f9;
+  font-size:50px;
+  align-items:center;
+}
+
+.withdraw-block .input input {
+  width:100%;
+  font-size:40px;
+  height:3rem;
+  margin-left: 1rem;
+}
+
+.withdraw-block .tixian {
+  padding:.4rem 0;
+  width: 100%;
+  background: linear-gradient(to right, #ffda00, #ffaa00);
+  border-radius:3px;
+  text-align:center;
+  margin-top:1rem;
+  margin-bottom:1rem;
+  font-size: 16px;
+}

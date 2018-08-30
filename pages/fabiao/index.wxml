@@ -1,0 +1,17 @@
+<view>
+  <view class='input'>
+    <textarea placeholder='这一刻的想法...' placeholder-style='font-size: 14px;' bindinput="input"></textarea>
+  </view>
+  <view class='images'>
+    <view class="shangchuan" wx:if="{{imgArr}}" wx:for="{{imgArr}}" wx:key="">
+      <text class='upload-close' bindtap='deleteimg' id="{{index}}">×</text>
+      <view class='imageblock' data-url='{{item}}' bindtap='toseepic'>
+        <image src='{{item}}' mode='widthFix'></image>
+      </view>
+    </view>
+    <image src="../../image/image.png" mode='widthFix' bindtap="upload"></image>
+  </view>
+  <view class='bottom'>
+    <view class='left' bindtap='toindex'>取消</view><view class="right" bindtap='fabiao'>发表</view>
+  </view>
+</view>

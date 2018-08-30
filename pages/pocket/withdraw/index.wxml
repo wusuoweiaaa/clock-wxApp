@@ -1,0 +1,15 @@
+<view class="index-container">
+  <view class='userinfo'>
+    <view class='info-top'>
+      <view class='top-left'><image src='../../../image/ww.jpg'></image><text>韦小宝</text></view><text style='padding:.1rem 1rem;background:#3EDD58;border-radius:20px;font-size:12px;color:#fff;'>微信用户</text>
+    </view>
+    <view style='margin-top:1.5rem;font-size:13px;color:#666;'>提现现金，直接到微信零钱</view>
+  </view>
+  <view class='withdraw-block'>
+    <view class='title'>提现现金</view>
+    <view class='input'>
+      <text>￥</text><input type='number'></input>
+    </view>
+    <view class='tixian'>微信提现</view>
+  </view>
+</view>

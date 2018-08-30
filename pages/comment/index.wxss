@@ -1,0 +1,70 @@
+/* daka/pages/comment/index.wxss */
+/* daka/pages/edit/index.wxss */
+.edit-container {
+   padding: 1rem; 
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.input {
+  /* border-bottom: 1px solid #0054E7; */
+  /* margin-top: 1rem; */
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  padding: .3rem .5rem;
+}
+
+.input textarea {
+  flex: 1;
+  height: 5rem;
+  font-size: 16px;
+}
+
+/* .input text {
+  color: #999;
+} */
+
+.save {
+  width:90%;
+  text-align:center;
+  background:linear-gradient(to right,  #669dff,#0c5beb);
+  border-radius:3px;
+  color:#fff;
+  font-size:16px;
+  padding:.5rem 0;
+  margin: 0 auto;
+  margin-top:3rem;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  font-size: 15px;
+  height:3rem;
+left:0;
+right:0;
+line-height:3rem;
+
+}
+
+.bottom .left {
+  flex: 1;
+  text-align: center;
+   /* padding: 1rem 0; */
+   background: #fff;
+}
+
+.bottom .right {
+  flex: 3;
+  text-align: center;
+  background: #ffda00;
+  color: #fff;
+   /* padding: 1rem 0; */
+}

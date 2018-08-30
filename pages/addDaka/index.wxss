@@ -1,0 +1,64 @@
+/* daka/pages/addDaka/index.wxss */
+.index-container {
+  padding: .8rem;
+}
+
+.index-container .content {
+  padding: .8rem;
+  background-color: #fff;
+}
+
+.top-cover {
+  display: block;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.index-container .content input {
+  width: 100%;
+  margin-top: .8rem;
+  padding: .5rem 0;
+  text-align: center;
+  font-size: 14px;
+  /* font-weight: 500; */
+  background:#f9f9f9;
+}
+
+.index-container .content .details {
+  width: calc(100% - 1rem);
+  margin-top: .8rem;
+  padding: .5rem;
+  text-align: center;
+  font-size: 14px;
+  height:5rem;
+  background:#f9f9f9;
+}
+
+.index-container .content .input-item {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: #999;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.index-container .content .input-item text:first-child{
+  color: #666;
+}
+
+.index-container .button {
+  padding: .5rem;
+  margin-top: .8rem;
+  color: red;
+  font-size: 16px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+
+.input-item .shijianduan {
+  display: flex;
+  align-items:center;
+}

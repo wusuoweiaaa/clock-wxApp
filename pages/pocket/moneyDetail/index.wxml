@@ -1,0 +1,12 @@
+<view class="index-container">
+  <view class='zhangdan-list'>
+    <view class='list-item' wx:for="{{list}}" wx:key="">
+      <view class='item-left'>
+        <text>{{item.name}}</text>
+        <text class='time'>{{item.time}}</text>
+      </view>
+      <view class="item-right {{item.jifen > 0 ? 'green' : 'red'}}">{{item.jifen > 0 ? '+' : ''}} {{item.jifen}}</view>
+    </view>
+   
+  </view>
+</view>

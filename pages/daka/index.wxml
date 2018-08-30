@@ -1,0 +1,205 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<import src="../../template/calendar/index.wxml"/>
+<import src="../../template/datepicker/index.wxml"/>
+
+<view class='daka-container'>
+  <view class='top'  style='background-image:url({{indexInfo.images}});background-size: 100% 100%;background-repeat: no-repeat;'>
+    <view class='top-index'>
+      <text class='top-title'>{{indexInfo.title}}</text>
+      <view class='top-middle'>
+        <text> {{indexInfo.totaluser}}人参与</text> <text>{{indexInfo.totalsignin}}次打卡</text>
+      </view>
+      <view class="top-bottom">
+        <image src='{{indexInfo.user.avatar}}' bindtap='touserinfo'></image><text bindtap='touserinfo'>{{indexInfo.user.nickname}}</text><text>加微信</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='user-block'>
+    <view>
+      <image class="avatar" src="{{indexInfo.user.avatar}}"></image>
+      <view class='user-info'>
+        <text>{{indexInfo.user.nickname}}</text>
+        <text>已坚持打卡{{indexInfo.user.totalcheckin}}天</text>
+      </view>
+    </view>
+    <view class="user-right">
+      <view class="right-item"  bindtap='toPaihangbang'><image src="../../image/paihangbang.png"></image><text>排行榜</text></view>
+      <view class="right-item" bindtap='toPaihangbang2'><image src="../../image/qiandao.png"></image><text>日签</text></view>
+    </view>
+  </view>
+
+  <view class="wanfa" wx:if="{{type == 3}}">
+    <view class='wanfa-title'>玩法介绍</view>
+    <view class='wanfa-info'>
+      <text class='wanfa-item'>活动时间：</text>
+      <text class='wanfa-item'>活动上限</text>
+      <text class='wanfa-item'>保证金：</text>
+      <text class='wanfa-item'>报名截止：</text>
+    </view>
+  </view>
+
+  <view class='canyu-block' wx:if="{{indexInfo.enroll == 0}}">
+    <view class="canyu-num">{{indexInfo.totaluser}}人参与</view>
+    <view class='canyu-button' bindtap='canyu'>立刻参与</view>
+  </view>
+  <view class='calender' wx:else>
+    <view class="calendar-wrap" bindtap='tochangjing2'>
+      <view class="flex box box-tb box-align-center">
+        <view class="calendar pink-color box box-tb">
+          <view class="weeks box box-lr box-pack-center box-align-center">
+            <view class="flex week fs28"data-idx="0">日</view>
+            <view class="flex week fs28"data-idx="1">一</view>
+            <view class="flex week fs28"data-idx="2">二</view>
+            <view class="flex week fs28"data-idx="3">三</view>
+            <view class="flex week fs28"data-idx="4">四</view>
+            <view class="flex week fs28"data-idx="5">五</view>
+            <view class="flex week fs28"data-idx="6">六</view>
+          </view>
+        </view>
+        <view class="days box box-lr box-wrap" style="width: 100%;">
+          <view class="grid normal-day-color box box-align-center box-pack-center"data-disable="undefined"data-idx="0" wx:for="{{weekdays}}" wx:key="">
+            <view class="day-with-dot box box-tb box-align-center box-pack-center">
+              <view class="day border-radius box box-align-center box-pack-center {{item.status ? 'orange-bg': ''}}">{{item.day}}</view>
+            </view>
+          </view>
+        </view>
+        
+      </view>
+      <!-- <template is="calendar" data="{{...calendar}}" /> -->
+    </view>
+    
+    <view class='daka-button' bindtap='daka' wx:if="{{indexInfo.records == 0}}">
+      <text>打卡</text>
+    </view>
+    <view class='daka-button'  bindtap='tofabiao' wx:else>
+      <text class='plus'>+</text>
+    </view>
+    <view class='youxiaotime'>
+      <text>有效时间：{{indexInfo.config.sign_time.start_time}}-{{indexInfo.config.sign_time.end_time}}</text>
+    </view>
+  </view>
+  <view class='changjing-block' wx:if="{{type!=3}}">
+    <view class='changjing-top'> <text>打卡场景</text><text bindtap='tochangjing'>更多</text></view>
+    <view class='changjing-bottom'>
+      <view class='left'>
+        <text>打卡不放弃，青春永远</text>
+        <text><text class='iconfont icon-last-time'></text>6:00-11:00</text>
+      </view>
+      <image src='../../image/ww.jpg'></image>
+    </view>
+  </view>
+  
+  <view class='detail-block' style='{{type == 3 ? "margin-bottom:6rem;":""}}'>
+    <view class='tabbar'>
+      <text class='{{select == 0 ? "bar-selected" : ""}}' bindtap="selected" id="0">日记</text>
+      <text class='{{select == 1 ? "bar-selected" : ""}}' bindtap="selected" id="1">详情</text>
+      <text class='{{select == 2 ? "bar-selected" : ""}}' bindtap="selected" id="2">成员</text>
+  
+    </view>
+    <view class='list'>
+      <!-- <template is="bar" data="{{list}}"></template> -->
+      <view wx:for="{{riliList}}" wx:key="" wx:if="{{select == 0}}">
+        <template is="bar" data="{{...item,images: item.images}}"></template>
+      </view>
+      <view class='detailinfo' wx:if="{{select == 1}}">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+      </view>
+      <view class="rule" wx:for="{{member}}" wx:key="" wx:if="{{select == 2}}">
+        <template is="member" data="{{...item}}"></template>
+      </view>
+      
+    </view>
+
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+        <block wx:for-items="{{actionSheetItems}}" wx:key="">
+            <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+        </block>
+        <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+    </action-sheet>
+    <action-sheet hidden="{{actionSheetHidden1}}" bindchange="actionSheetbindchange1">
+        <block wx:for-items="{{actionSheetItems1}}"  wx:key="">
+            <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+        </block>
+        <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+    </action-sheet>
+
+
+    <template name="bar">
+      <view class='list-item'>
+        <view class='list-item-left'>
+          <image class="avatar" src='{{avatar}}' id="{{openid}}"  bindtap='touserinfo'></image> 
+        </view>
+        <view class='list-item-right'>
+         <view class="item-title">
+          <text>{{nickname}}</text>
+          
+          </view>
+         <view class='info'>
+            <view class="item-time">{{createtime}}</view>
+            <view class="item-title">{{text}}</view>
+            <view class="images" wx:if="{{images && images.length>0}}">
+              <image wx:for="{{images}}" wx:for-item="image" wx:key="" src="{{image}}" bindtap='viewImage' data-url='{{image}}' data-images='{{images}}' bindtap="preview"></image>
+            </view>
+            <view class='icons'>
+              <text class='icon-item' bindtap='dian' id="{{id}}">
+                <text class='iconfont icon-zan icon'  wx:if="{{iszan == 0}}" ></text>
+                <text class='iconfont icon-28dianzanfill' wx:else></text>
+                 <text wx:if="{{iszan == 0}}"> 赞</text>
+                 <text wx:else> 取消赞</text>
+              </text>
+              <!-- <text class='icon-item' bindtap='dianzan'  data-did="{{item.id}}" wx:else><text class='iconfont icon-28dianzanfill'></text> 取消赞</text> -->
+              <text class='icon-item' bindtap="tocomment" id="{{id}}"><text class='iconfont icon-pinglun icon'></text> 评论</text>
+              <text class='icon-item' wx:if="{{oneself == 1}}" bindtap='share'  id="{{id}}"><text class='iconfont icon-zhuanfa icon'></text> 分享</text>
+            </view>
+            <view class='info-list' wx:if="{{zan_count > 0 || comment_list && comment_list.length > 0}}">
+              <view wx:if="{{zan_count > 0}}" class="zancount"><text class='iconfont icon-zan icon'></text>{{zan_count}}人觉得很赞<text></text></view>
+              <view wx:for="{{comment_list}}" wx:for-item="pinglun" wx:key="" wx:if="{{comment_list && comment_list.length > 0}}"><text class='name'>{{pinglun.nickname}}</text><text>: {{pinglun.text}}</text></view>
+            </view>
+         </view>
+        </view>
+        <view class="info1" bindtap='toinfo' id="{{item.id}}" data-self="{{item.isoneself}}">
+            <image src="../../image/info.png"></image>
+        </view>
+      </view>
+    </template>
+    <template name="member">
+      <view class='member-item'>
+        <view class='member-item-left'>
+          <image  class="avatar" src='{{avatar}}'></image> 
+          <text>{{nickname}}</text>
+        </view>
+        <view class='member-item-right'>
+          <text>{{createtime}}加入</text>
+        </view>
+      </view>
+    </template>
+
+  </view>
+  <view class='wanfabottom'  wx:if="{{type == 3}}">
+    <view class='wanfa-renshu'><text class='wanfa-num'>128</text>人已经报名参加，奖金池<text class='wanfa-num'>2500元</text></view>
+    <view class='joinbutton'>立即报名参与明天活动</view>
+  </view>
+</view>
+
+<view class='tip-cover' wx:if="{{isdaka}}">
+  <view class='tip-block'>
+    <view class='close' bindtap='close'>×</view>
+    <image src='../../image/wancheng2.png' mode="widthFix"></image>
+    <view class='plus'>恭喜你，打卡成功!</view>
+    <view class='yellow'>+{{dakainfo.integral}}积分</view>
+    <view class='grey'>坚持打卡{{dakainfo.orderdaycheckin}}天</view>
+    <view class='button'><text bindtap='tofabiao'>发表日记</text><text bindtap='toPaihangbang2'>分享一下</text></view>
+  </view>
+</view>
+
+<view class='tip-cover' wx:if="{{isShare}}">
+  <view class='tiptip'>
+    <view class='tip-block tip-block2'>
+      <view class='close' bindtap='closeshare'>×</view>
+      <image src='{{shareimg}}' mode="widthFix"></image>
+    
+    </view>
+    <view class='button2'><view bindtap='saveimg'>保存至手机</view><view bindtap='sendTo' style="background-color:#ffce00;position:relative;">发送好友<button open-type="share" style='position:absolute;height:100%;width:100%;left:0;right:0;top:0;bottom:0;opacity:0;'></button></view></view>
+  </view>
+</view>

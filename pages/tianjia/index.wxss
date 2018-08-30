@@ -1,0 +1,77 @@
+/* daka/pages/tianjia/index.wxss */
+.daka-items {
+  flex-wrap: wrap;
+}
+
+.daka-item {
+  flex: 0 calc(50% - 2rem);
+  display: flex;
+  background-color: #fff;
+  padding: .8rem;
+  margin-bottom: .8rem;
+  align-items: center;
+}
+
+.daka-item:nth-child(odd) {
+  margin-right: .8rem;
+}
+
+.daka-item .left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 16px;
+  justify-content: center;
+}
+
+.daka-item image {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.daka-item .daka-item-title  {
+  color: #333;
+  font-weight: 600;
+}
+
+.daka-item .left .num {
+  font-size: 12px;
+  margin-top: .3rem;
+  color: #666;
+}
+
+.quanzi-block {
+  margin-top: 0;
+}
+
+.quanzi-block .block-details {
+  margin-top: .8rem;
+  background-color: #fff;
+  flex-direction: column;
+}
+
+.quanzi-cover {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display:block;
+}
+
+.quanzi-info {
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 12px;
+  padding: .2rem .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   color: #666;
+}
+
+
+
+.quanzi-info text:nth-child(1) {
+  color: #000;
+  font-weight: 600;
+}

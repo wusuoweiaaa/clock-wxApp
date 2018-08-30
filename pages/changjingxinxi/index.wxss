@@ -1,0 +1,34 @@
+/* daka/pages/changjingxinxi/index.wxss */
+.index-container {
+  padding:.8rem;
+}
+
+.changjingList .list-item {
+  display:flex;
+  align-items: center;
+  margin-bottom: .8rem;
+  padding: .8rem;
+  background-color: #fff;
+}
+
+.changjingList .list-item .info {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.changjingList .list-item .info .jiesuo{
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+  margin-top:.5rem;
+}
+
+.changjingList .list-item image{
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-height: 2rem !important;
+}

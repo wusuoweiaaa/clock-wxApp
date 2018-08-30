@@ -1,0 +1,67 @@
+
+<view class='container'>
+  <view class='user-block'>
+    <view class="user-item">
+      <image class="avatar" src='{{user.avatarUrl}}'></image>
+      <text>跑步达人</text>
+    </view>
+  </view>
+  <view class='user-block'>
+    <view class="user-item" bindtap='topocket'>
+      <image src='../../image/qianbao.png'></image>
+      <text>我的钱包</text>
+      <text class='iconfont icon-you'></text>
+    </view>
+    <view class="user-item">
+      <image src='../../image/buqianka.png'></image>
+      <text>我的补签卡</text>
+      <text class='iconfont icon-you'></text>
+    </view>
+  </view>
+  <view class='user-block'>
+    <view class="user-item" bindtap='tomall'>
+      <image src='../../image/jifenshangcheng.png'></image><text>积分商城</text>
+      <text class='iconfont icon-you'></text>
+    </view>
+  </view>
+  <view class='user-block'>
+    <!-- <view class="user-item">
+      <image src='../../image/yijian.png'></image>
+      <text>意见回馈</text>
+      <text class='iconfont icon-you'></text>
+    </view>
+    <view class="user-item">
+      <image src='../../image/shoucang.png'></image>
+      <text>好评收藏</text> 
+      <text class='iconfont icon-you'></text>
+    </view> -->
+    <view class="user-item">
+      <image src='../../image/fenxianghaoyou.png'></image>
+      <text>分享好友</text>
+      <text class='iconfont icon-you'></text> 
+    </view>
+    
+  </view>
+  <view class='user-block'>
+    <view class="user-item">
+      <button open-type="contact" session-from="weapp"></button>
+      <image src='../../image/lianxikefu.png'></image>
+      <text>联系客服</text>
+      <text class='iconfont icon-you'></text>
+    </view>
+  </view>
+  <view class="user-item" wx:if="{{share == 1}}">
+    <text>分享</text><text style='color:#0054E7;' bindtap='toshare'>点击分享？</text>
+  </view>
+  <view class='zp'>
+    ©掌泡科技提供技术支持
+  </view>
+</view>
+
+
+
+
+
+
+
+

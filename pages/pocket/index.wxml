@@ -1,0 +1,8 @@
+<view class='index-container'>
+  <view class='moneyinfo-block'>
+    <view class='title'>我的余额</view>
+    <view class='count'>￥8888</view>
+    <view class='tixian' bindtap='totixian'>微信提现</view>
+    <view class="detail" bindtap='todetail'>账单明细</view>
+  </view>
+</view>

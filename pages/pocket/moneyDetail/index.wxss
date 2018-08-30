@@ -1,0 +1,42 @@
+.index-container {
+  padding:.8rem;
+}
+
+.zhangdan-list {
+  background-color:#fff;
+  padding:.8rem;
+}
+
+.zhangdan-list .list-item {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:16px;
+  margin-bottom:1rem;
+}
+
+.zhangdan-list .list-item:last-child {
+  margin-bottom: 0;
+}
+
+.zhangdan-list .list-item .item-left {
+  display:flex;
+  flex-direction:column;
+}
+
+.zhangdan-list .list-item .item-left .time {
+  color: #999;
+  font-size:13px;
+}
+
+.green {
+  color: #3EDD58 !important;
+}
+
+.red {
+  color: #FF4D4D !important;
+}
+
+.zhangdan-list .list-item .item-right {
+  font-size:20px;
+}
