@@ -1,0 +1,1 @@
+"use strict"; var siteInfo = { uniacid: "53", acid: "53", multiid: "0", version: "1.0.0", siteroot:"https://weili.nowbeta.com/app/index.php"};module.exports=siteInfo;

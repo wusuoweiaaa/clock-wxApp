@@ -1,0 +1,64 @@
+{
+	"pages" : [
+    "daka/pages/index/index",
+    "daka/pages/login/index",
+    "daka/pages/user/index",
+    "daka/pages/content/index",
+    "daka/pages/addDaka/index",
+    "daka/pages/faxian/index",
+    "daka/pages/tianjia/index",
+    "daka/pages/daka/index",
+    "daka/pages/userDaka/index",
+    "daka/pages/changjingxinxi/index",
+    "daka/pages/paihangbang/index",
+    "daka/pages/changjing/index",
+    "daka/pages/userinfo/index",
+    "daka/pages/comment/index",
+    "daka/pages/fabiao/index",
+    "daka/pages/mall/index",
+    "daka/pages/goods/index",
+    "daka/pages/article/index",
+    "daka/pages/pocket/index",
+    "daka/pages/pocket/moneyDetail/index",
+    "daka/pages/pocket/withdraw/index",
+    "daka/pages/usercenter/index"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffec00",
+    "navigationBarTitleText": "快打卡",
+    "navigationBarTextStyle": "white"
+	},
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#ffec00",
+    "list": [
+      {
+        "pagePath": "daka/pages/index/index",
+        "text": "打卡",
+        "iconPath": "daka/image/index.png",
+        "selectedIconPath": "daka/image/index-ac.png"
+      },
+      {
+        "pagePath": "daka/pages/tianjia/index",
+        "text": "添加",
+        "iconPath": "daka/image/tianjia.png",
+        "selectedIconPath": "daka/image/tianjia-ac.png"
+      },
+      {
+        "pagePath": "daka/pages/faxian/index",
+        "text": "发现",
+        "iconPath": "daka/image/faxian.png",
+        "selectedIconPath": "daka/image/faxian-ac.png"
+      },
+      {
+        "pagePath": "daka/pages/user/index",
+        "text": "我的",
+        "iconPath": "daka/image/user1.png",
+        "selectedIconPath": "daka/image/user-ac.png"
+      }
+    ]
+  }
+  
+  
+}
